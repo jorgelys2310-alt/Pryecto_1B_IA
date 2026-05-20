@@ -112,8 +112,6 @@ Permite aceptar temporalmente soluciones peores para escapar de óptimos locales
 
 Las restricciones duras deben cumplirse obligatoriamente.
 
-### Implementadas:
-
 * Un estudiante no puede tener dos clases al mismo tiempo.
 * Un profesor no puede dictar dos materias simultáneamente.
 * Un aula no puede ser utilizada por dos clases al mismo tiempo.
@@ -127,8 +125,6 @@ Las restricciones duras deben cumplirse obligatoriamente.
 ## Restricciones Blandas
 
 Las restricciones blandas generan penalizaciones en la función objetivo.
-
-### Implementadas:
 
 * Evitar clases muy temprano.
 * Evitar clases tarde el viernes.
@@ -144,8 +140,7 @@ Las restricciones blandas generan penalizaciones en la función objetivo.
 Proyecto/
 │
 ├── main.py
-├── README.md
-└── exportaciones/
+└── README.md
 ```
 
 ---
@@ -194,6 +189,18 @@ La solución inicia con una puntuación base y se aplican:
 * Bonificaciones.
 
 Mientras menor sea la penalización, mejor será el horario generado.
+
+## Pesos utilizados
+
+| Restricción blanda           | Peso |
+|-----------------------------|------|
+| Clases a las 7AM            | -3 pts |
+| Viernes en la tarde         | -5 pts |
+| Aula no preferida           | -2 pts |
+| Huecos en el horario        | -3 pts |
+| Mala distribución semanal   | -3 pts |
+
+Estos pesos permiten que los algoritmos de búsqueda local prioricen horarios más cómodos y equilibrados para los estudiantes.
 
 ---
 
