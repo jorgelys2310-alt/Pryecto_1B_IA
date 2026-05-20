@@ -258,7 +258,7 @@ cd Proyecto
 ## 3. Ejecutar el sistema
 
 ```bash
-python Proyecto_IA_FinalV5.py
+python main.py
 ```
 
 ---
